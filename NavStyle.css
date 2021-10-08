@@ -1,0 +1,147 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 16px;
+    font-family: 'Open Sans Condensed';
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+}
+
+body{
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar{
+    width: 0.8rem;
+}
+
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: green;
+}
+
+main{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: var(--bg-secondary);
+}
+
+.logo{
+    color: rgb(4, 182, 4);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+}
+
+.nav-links a{
+    color: rgb(4, 182, 4);
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.resize{
+    display: none;
+    cursor: pointer;
+
+}
+
+.resize div{
+    width: 25px;
+    height: 3px;
+    border-radius: 50px;
+    background-color: rgb(4, 182, 4);
+    margin: 5px;
+    transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 1024px){
+    .nav-links{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .nav-links{
+        position: fixed;
+        right: auto;
+        left: auto;
+        top: 40%;
+        background-color: rgba(0, 0, 0, 0.88);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: 30%;
+        width: 0%;
+        height: 0%;
+        border-radius: 50px;
+        transition: 0.7s ease;
+        opacity: 0;
+
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .resize{
+        display: block;
+    }
+}
+
+.nav-active{
+    opacity: 1;
+    width: 65%;
+    height: 45%;
+}
+
+@keyframes navLinkFades{
+    from{
+        opacity: 0;
+        transform: scale(50%);
+    }
+    to{
+        opacity: 1;
+        transform: scale(0%);
+    }
+} 
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
